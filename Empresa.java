@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * @author  Grupo Re-Cycler
  * @date 18-08-2019
@@ -146,7 +146,6 @@ public class Empresa{
         }
         return x;
     }   
-
 
     /**
      * Funcion que devuelve un string con datos del Empresa
