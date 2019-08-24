@@ -62,3 +62,4 @@ public class Voluntariado{
             + "\nFecha: " + Fecha
             + "\nHora: " + Hora;
     }
+    }
