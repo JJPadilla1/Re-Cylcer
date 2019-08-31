@@ -3,10 +3,14 @@ import java.util.ArrayList;
  * @author  Grupo Re-Cycler
  * @date 23-08-2019
  * Universidad del Valle de Guatemala
- * Main, aplicación, Re-cycler
+ * Modelador de aplicación Re-cycler
  */
 
- //Declarar las clases como un Arraylist
+
+
+/**
+ * Declarar las clases como un Arraylist
+ */
 public class Aplicacion{
     private ArrayList<Empresa> empresas;
     private Usuario usuario;
@@ -20,143 +24,226 @@ public class Aplicacion{
         colectas = new ArrayList<Colecta>();
     }
 
-//Constructor
+    /**
+     * Método para obtener la lista de empresas
+     * @return ArrayList con las empresas
+     */
+    public ArrayList<Empresa> getEmpresa(){
+        return empresas;
+        }
+    
+    /**
+     * Método para obtener objeto de usuario
+     * @return Objeto de tipo usuario
+     */  
+    public Usuario getUsuario(){
+        return usuario;
+        }
 
-public ArrayList<Empresa> getEmpresa(){
-    return empresas;
+    /**
+     * Método para obtener la lista de voluntariados
+     * @return ArrayList con los voluntariados
+     */
+    public ArrayList<Voluntariado> getVoluntariado(){
+        return voluntariados;
+        }
+
+    /**
+     * Método para obtener la lista de colectas
+     * @return ArrayList con las colectas
+     */
+    public ArrayList<Colecta> getColecta(){
+        return colectas;
+        }
+
+    /**
+     * Método para agregar nueva empresa al ArrayList de empress.
+     * @param NombreEmpresa Nombre de la empresa de reciclaje que el usuario desea agregar
+     * @param Correo Corereo de la empresa de reciclaje que el usuario desea agregar
+     * @param Telefono Telefono de la empresa de reciclaje que el usuario desea agregar
+     * @param Direccion Direccion de la empresa de reciclaje que el usuario desea agregar
+     */
+    public void setNewEmpresa(String NombreEmpresa, String Correo, String Telefono, String Direccion ){
+        /**
+         * Se crea un objeto de tipo Empresa
+         */
+        Empresa Business = new Empresa();
+        /**
+         * Todos los sets de Empresa para el objeto Business
+         */
+        Business.setNombreEmpresa(NombreEmpresa);
+        Business.setCorreo(Correo);
+        Business.setTelefono(Telefono);
+        Business.setDireccion(Direccion);
+        /** 
+         * Se agrega al arraylist Empresas el array Business
+         */
+        empresas.add(Business);
+        
     }
-public Usuario getUsuario(){
-    return usuario;
+
+    /** 
+     * Método para cambiar los datos de una empresa existente
+     * @param x Indice de la empresa de la cual se quiere cambiar la información
+     * @param NombreEmpresa Nombre de la empresa de reciclaje que el usuario desea modificar
+     * @param Correo Corereo de la empresa de reciclaje que el usuario desea modificar
+     * @param Telefono Telefono de la empresa de reciclaje que el usuario desea modificar
+     * @param Direccion Direccion de la empresa de reciclaje que el usuario desea modificar
+     */
+    public void modificarEmpresa(int x, String NombreEmpresa, String Correo, String Telefono, String Direccion){
+        /**
+         * Se crea un objeto de tipo Empresa
+         */
+        Empresa Business = new Empresa();
+        /**
+         * Todos los sets de Empresa para el objeto Business
+         */
+        Business.setNombreEmpresa(NombreEmpresa);
+        Business.setCorreo(Correo);
+        Business.setTelefono(Telefono);
+        Business.setDireccion(Direccion);
+        /**
+         * Se sustituye los nuevos datos "Business" en la posición elegida del arraylist empresas
+         */
+        empresas.set(x,Business);
+        
     }
-public ArrayList<Voluntariado> getVoluntariado(){
-    return voluntariados;
+
+
+    /**Método para setear los datos del usuario
+     * @param Username Username del usuario 
+     * @param Contraseña Contraseña que el usuario desee
+     * @param Correo Correo que el usuario desea agregar
+     * @param Telefono Telefono que el usuario desea agregar
+     * @param Direccion Direccion que el usuario desea agregar
+     * @param Nombre Nombre del usuario que desee registrar
+     */
+    public void setUsuario(String UserName, String Contrasena, String Correo, String Telefono, String Direccion, String Nombre){
+        usuario.setUserName(UserName);
+        usuario.setContrasena(Contrasena);
+        usuario.setCorreo(Correo);
+        usuario.setTelefono(Telefono);
+        usuario.setDireccion(Direccion);
+        usuario.setNombre(Nombre);
     }
-public ArrayList<Colecta> getColecta(){
-    return colectas;
+
+
+
+    /** Método para agregar nuevo voluntariado
+     * @param Lugar = Lugar del voluntaridao que el usuario desea agregar
+     * @param Fecha = Fecha del voluntariado que el usuario desea agregar
+     */
+    public void setNewVoluntariado(String Lugar, String Fecha){
+        /**
+         * Se crea un objeto de tipo Voluntariado
+         */
+        Voluntariado Business = new Voluntariado();
+        /**
+         * Todos los sets de Voluntariado para el objeto Business
+         */
+        Business.setLugar(Lugar);
+        Business.setFecha(Fecha);
+        /**
+         * Se agrega al arraylist Empresas el array Business
+         */
+        voluntariados.add(Business);
     }
 
-//Método para agregar nueva empresa
-//@param NombreEmpresa Nombre de la empresa de reciclaje que el usuario desea agregar
-//@param Correo Corereo de la empresa de reciclaje que el usuario desea agregar
-//@param Telefono Telefono de la empresa de reciclaje que el usuario desea agregar
-//@param Direccion Direccion de la empresa de reciclaje que el usuario desea agregar
-public void setNewEmpresa(String NombreEmpresa, String Correo, String Telefono, String Direccion ){
-    //Se crea un objeto de tipo Empresa
-    Empresa Business = new Empresa();
-    //Todos los sets de Empresa para el objeto Business
-    Business.setNombreEmpresa(NombreEmpresa);
-    Business.setCorreo(Correo);
-    Business.setTelefono(Telefono);
-    Business.setDireccion(Direccion);
-    //Se agrega al arraylist Empresas el array Business
-    empresas.add(Business);
-}
-
-//Método para cambiar los datos de una empresa existente
-//@param x número de la posición de la empresa que se desea cambiar la información
-//@param NombreEmpresa Nombre de la empresa de reciclaje que el usuario desea modificar
-//@param Correo Corereo de la empresa de reciclaje que el usuario desea modificar
-//@param Telefono Telefono de la empresa de reciclaje que el usuario desea modificar
-//@param Direccion Direccion de la empresa de reciclaje que el usuario desea modificar
-public void modificarEmpresa(int x, String NombreEmpresa, String Correo, String Telefono, String Direccion){
-    //Se crea un objeto de tipo Empresa
-    Empresa Business = new Empresa();
-    //Todos los sets de Empresa para el objeto Business
-    Business.setNombreEmpresa(NombreEmpresa);
-    Business.setCorreo(Correo);
-    Business.setTelefono(Telefono);
-    Business.setDireccion(Direccion);
-    //Se sustituye los nuevos datos "Business" en la posición x del arraylist empresas
-    empresas.set(x,Business);
-}
-
-
-//Método para setear los datos del usuario
-//@param Username Username del usuario 
-//@param Contraseña Contraseña que el usuario desee
-//@param Correo Correo que el usuario desea agregar
-//@param Telefono Telefono que el usuario desea agregar
-//@param Direccion Direccion que el usuario desea agregar
-//@param Nombre Nombre del usuario que desee registrar
-public void setUsuario(String UserName, String Contrasena, String Correo, String Telefono, String Direccion, String Nombre){
-    usuario.setUserName(UserName);
-    usuario.setContrasena(Contrasena);
-    usuario.setCorreo(Correo);
-    usuario.setTelefono(Telefono);
-    usuario.setDireccion(Direccion);
-    usuario.setNombre(Nombre);
-}
-
-
-
-//Método para agregar nuevo voluntariado
-//@param Lugar = Lugar del voluntaridao que el usuario desea agregar
-//@param Fecha = Fecha del voluntariado que el usuario desea agregar
-public void setNewVoluntariado(String Lugar, String Fecha){
-    //Se crea un objeto de tipo Voluntariado
-    Voluntariado Business = new Voluntariado();
-    //Todos los sets de Voluntariado para el objeto Business
-    Business.setLugar(Lugar);
-    Business.setFecha(Fecha);
-    //Se agrega al arraylist Empresas el array Business
-    voluntariados.add(Business);
-}
-
-//Método para cambiar los datos de un voluntariado existente
-//@param x número de la posición del voluntariado que se desea cambiar la información
-//@param Lugar Lugar del voluntariado que el usuario desea modificar
-//@param Fecha Fecha del voluntariado que el usuario desea modificar
-public void modificarVoluntariado(int x,String Lugar, String Fecha){
-    //Se crea un objeto de tipo Voluntariado
-    Voluntariado Business = new Voluntariado();
-    //Todos los sets de Voluntariado para el objeto Business
-    Business.setLugar(Lugar);
-    Business.setFecha(Fecha);
-    //Se sustituye los nuevos datos "Business" en la posición x del arraylist voluntariados
-    voluntariados.set(x,Business);
-}
+    /** Método para cambiar los datos de un voluntariado existente
+     * @param x número de la posición del voluntariado que se desea cambiar la información
+     * @param Lugar Lugar del voluntariado que el usuario desea modificar
+     * @param Fecha Fecha del voluntariado que el usuario desea modificar
+     */
+    public void modificarVoluntariado(int x,String Lugar, String Fecha){
+        /**
+         * Se crea un objeto de tipo Voluntariado
+         */
+        Voluntariado Business = new Voluntariado();
+        /** 
+         * Todos los sets de Voluntariado para el objeto Business
+         */
+        Business.setLugar(Lugar);
+        Business.setFecha(Fecha);
+        /**
+         * Se sustituye los nuevos datos "Business" en la posición x del arraylist voluntariados
+         */
+        voluntariados.set(x,Business);
+    }
 
 
 
 
-//Método para agregar nueva colecta
-//@param Material de reciclaje que el usuario desea agregar a la Colecta
-//@param Fecha Fecha de la colectan de reciclaje que el usuario desea agregar
-//@param Lugar Lugar de la colecta de reciclaje que el usuario desea agregar
-public void setNewColecta(String Material, String Fecha, String Lugar){
-    //Se crea un objeto de tipo Colecta
-    Colecta Business = new Colecta();
-    //Todos los sets de Colecta para el objeto Business
-    Business.setMaterial(Material);
-    Business.setFecha(Fecha);
-    Business.setLugar(Lugar);
-    //Se agrega al arraylist Empresas el array Business
-    colectas.add(Business);
-}
-//Método para cambiar los datos de una colecta existente
-//@param x número de la posición de la colecta que se desea cambiar la información
-//@param NombreEmpresa Nombre de la empresa de reciclaje que el usuario desea modificar
-//@param Correo Corereo de la empresa de reciclaje que el usuario desea modificar
-//@param Telefono Telefono de la empresa de reciclaje que el usuario desea modificar
-//@param Direccion Direccion de la empresa de reciclaje que el usuario desea modificar
-public void modificarColecta(int x, String Material, String Fecha, String Lugar){
-    //Se crea un objeto de tipo Colecta
-    Colecta Business = new Colecta();
-    //Todos los sets de Empresa para el objeto Business
-    Business.setMaterial(Material);
-    Business.setFecha(Fecha);
-    Business.setLugar(Lugar);
-    //Se sustituye los nuevos datos "Business" en la posición x del arraylist colectas
-    colectas.set(x,Business);
-}
+    /** Método para agregar nueva colecta
+     * @param Material de reciclaje que el usuario desea agregar a la Colecta
+     * @param Fecha Fecha de la colectan de reciclaje que el usuario desea agregar
+     * @param Lugar Lugar de la colecta de reciclaje que el usuario desea agregar
+     */
+    public void setNewColecta(String Material, String Fecha, String Lugar){
+        /**
+         * Se crea un objeto de tipo Colecta
+         */
+        Colecta Business = new Colecta();
+        /**
+         * Todos los sets de Colecta para el objeto Business
+         */
+        Business.setMaterial(Material);
+        Business.setFecha(Fecha);
+        Business.setLugar(Lugar);
+        /**
+         * Se agrega al arraylist Empresas el array Business
+         */
+        colectas.add(Business);
+    }
+
+    /**
+     * Setter para colecta específica
+     * @param x Posición (indice) de colecta a modificar
+     * @param Material Material a recolectar en colecta
+     * @param Fecha Fecha en la que se dará la colecta
+     * @param Lugar Lugar en el que se realizará la colecta
+     */
+    public void modificarColecta(int x, String Material, String Fecha, String Lugar){
+        /**
+         * Se crea un objeto de tipo Colecta
+         */
+        Colecta Business = new Colecta();
+        /**
+         * Todos los sets de Empresa para el objeto Business
+         */
+        Business.setMaterial(Material);
+        Business.setFecha(Fecha);
+        Business.setLugar(Lugar);
+        /**
+         * Se sustituye los nuevos datos "Business" en la posición x del arraylist colectas
+         */
+        colectas.set(x,Business);
+    }
 
 
 
-public String toString(){
-    return "\nEmpresa: " + empresas
-            + "\nUsuario: " + usuario
-            + "\nVoluntariados: " + voluntariados
-            + "\nColectas: " + colectas;
+    /**
+     * Método toString (concatena los atributos del objeto en un string)
+     * @return String con datos de empresas
+     */
+    public String toString(){
+        String PrintEmpresa = "\nEmpresas: ";
+        String PrintUsuario = "\nUsuario: " + usuario.toString();
+        String PrintVoluntariados = "\nVoluntariados: ";
+        String PrintColectas = "\nColectas: ";
 
-}
+        for (int i = 0; i < empresas.size(); i = i + 1){
+            PrintEmpresa = PrintEmpresa + empresas.get(i).toString();
+        }
+
+        for (int i = 0; i < voluntariados.size(); i = i + 1){
+            PrintVoluntariados = PrintVoluntariados + voluntariados.get(i).toString();
+        }  
+        
+        for (int i = 0; i < colectas.size(); i = i + 1){
+            PrintColectas = PrintColectas + colectas.get(i).toString();
+        }   
+
+        return PrintEmpresa + PrintUsuario + PrintVoluntariados + PrintColectas;
+
+    }
 }
