@@ -22,12 +22,13 @@ public class Voluntariado{
 
 
     /**
-     * Función para cambiar Lugar de la Voluntariado
+     * FunciÃ³n para cambiar Lugar de la Voluntariado
      * @param Lugar Cadena con Lugar de la Voluntariado
      */
     public void setLugar(String Lugar){
         this.Lugar = Lugar;
     }
+
 
     /**
      * Funcion para obtener Lugar de la Voluntariado
@@ -36,9 +37,24 @@ public class Voluntariado{
     public String getLugar(){
         return Lugar;
     }   
+    
+    /**
+     * Funcion para obtener Hora del voluntariado
+     * @return Devuelve hora del voluntariado
+     */
+    
+    public void setHora(String Hora){
+        this.Hora = Hora;
+    }
+
+    public String getHora(){
+        return Lugar;
+    }   
+    
+
 
     /**
-     * Función para cambiar Fecha de la Voluntariado
+     * FunciÃ³n para cambiar Fecha de la Voluntariado
      * @param Fecha Cadena con Fecha de la Voluntariado
      */
     public void setFecha(String Fecha){
@@ -58,8 +74,8 @@ public class Voluntariado{
      * @return Devuelve datos de voluntariado
      */
     public String toString(){
-        return "\nLugar: " + Lugar
-            + "\nFecha: " + Fecha
-            + "\nHora: " + Hora;
+        return "Lugar : " + Lugar + "  "
+            + "Fecha : " + Fecha + "  "
+            + "Hora : " + Hora ;
     }
     }
