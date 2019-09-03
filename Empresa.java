@@ -21,7 +21,7 @@ public class Empresa{
         Correo = "";
         Telefono = "";
         Direccion = "";
-        String[] Material = {"", "", "", "", ""};
+        String[] Material = {"", "", "", ""};
     }
 
     /**
