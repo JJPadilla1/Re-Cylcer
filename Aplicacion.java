@@ -62,8 +62,9 @@ public class Aplicacion{
      * @param Correo Corereo de la empresa de reciclaje que el usuario desea agregar
      * @param Telefono Telefono de la empresa de reciclaje que el usuario desea agregar
      * @param Direccion Direccion de la empresa de reciclaje que el usuario desea agregar
+     * @param Material Material de la empresa
      */
-    public void setNewEmpresa(String NombreEmpresa, String Correo, String Telefono, String Direccion ){
+    public void setNewEmpresa(String NombreEmpresa, String Correo, String Telefono, String Direccion, String Material){
         /**
          * Se crea un objeto de tipo Empresa
          */
@@ -75,6 +76,8 @@ public class Aplicacion{
         Business.setCorreo(Correo);
         Business.setTelefono(Telefono);
         Business.setDireccion(Direccion);
+        Business.setMaterial(Material);
+
         /** 
          * Se agrega al arraylist Empresas el array Business
          */
@@ -89,8 +92,10 @@ public class Aplicacion{
      * @param Correo Corereo de la empresa de reciclaje que el usuario desea modificar
      * @param Telefono Telefono de la empresa de reciclaje que el usuario desea modificar
      * @param Direccion Direccion de la empresa de reciclaje que el usuario desea modificar
+     * @param Material Material que colecta la empresa
+     * 
      */
-    public void modificarEmpresa(int x, String NombreEmpresa, String Correo, String Telefono, String Direccion){
+    public void modificarEmpresa(int x, String NombreEmpresa, String Correo, String Telefono, String Direccion, String Material){
         /**
          * Se crea un objeto de tipo Empresa
          */
@@ -102,6 +107,8 @@ public class Aplicacion{
         Business.setCorreo(Correo);
         Business.setTelefono(Telefono);
         Business.setDireccion(Direccion);
+        Business.setMaterial(Material);
+
         /**
          * Se sustituye los nuevos datos "Business" en la posición elegida del arraylist empresas
          */
@@ -110,13 +117,15 @@ public class Aplicacion{
     }
 
 
-    /**Método para setear los datos del usuario
-     * @param Username Username del usuario 
-     * @param Contraseña Contraseña que el usuario desee
-     * @param Correo Correo que el usuario desea agregar
-     * @param Telefono Telefono que el usuario desea agregar
-     * @param Direccion Direccion que el usuario desea agregar
-     * @param Nombre Nombre del usuario que desee registrar
+
+    /**
+     * Constructor con parámetros
+     * @param UserName Nombre de usuario
+     * @param Contrasena Contraseña de la cuenta
+     * @param Correo Correo electrónico de la cuenta
+     * @param Telefono Númrero telefónico de la cuenta
+     * @param Direccion Dirección registrada en la cuenta
+     * @param Nombre Nombre real del usuario
      */
     public void setUsuario(String UserName, String Contrasena, String Correo, String Telefono, String Direccion, String Nombre){
         usuario.setUserName(UserName);
@@ -132,8 +141,9 @@ public class Aplicacion{
     /** Método para agregar nuevo voluntariado
      * @param Lugar = Lugar del voluntaridao que el usuario desea agregar
      * @param Fecha = Fecha del voluntariado que el usuario desea agregar
+     * @param Hora = Hora del voluntarido que desea agregar.
      */
-    public void setNewVoluntariado(String Lugar, String Fecha){
+    public void setNewVoluntariado(String Lugar, String Fecha, String Hora){
         /**
          * Se crea un objeto de tipo Voluntariado
          */
@@ -143,6 +153,9 @@ public class Aplicacion{
          */
         Business.setLugar(Lugar);
         Business.setFecha(Fecha);
+        Business.setHora(Hora);
+
+
         /**
          * Se agrega al arraylist Empresas el array Business
          */
@@ -153,8 +166,9 @@ public class Aplicacion{
      * @param x número de la posición del voluntariado que se desea cambiar la información
      * @param Lugar Lugar del voluntariado que el usuario desea modificar
      * @param Fecha Fecha del voluntariado que el usuario desea modificar
+     * @param Hora Hora del voluntariado que desea modificar
      */
-    public void modificarVoluntariado(int x,String Lugar, String Fecha){
+    public void modificarVoluntariado(int x,String Lugar, String Fecha, String Hora){
         /**
          * Se crea un objeto de tipo Voluntariado
          */
@@ -164,6 +178,7 @@ public class Aplicacion{
          */
         Business.setLugar(Lugar);
         Business.setFecha(Fecha);
+        Business.setHora(Hora);
         /**
          * Se sustituye los nuevos datos "Business" en la posición x del arraylist voluntariados
          */
