@@ -38,15 +38,17 @@ public class Voluntariado{
         return Lugar;
     }   
     
+
+    /**
+     * Función para cambiar hora de voluntariado
+     * @param Hora Hora del voluntariado
+    public void setHora(String Hora){
+        this.Hora = Hora;
+    }
     /**
      * Funcion para obtener Hora del voluntariado
      * @return Devuelve hora del voluntariado
      */
-    
-    public void setHora(String Hora){
-        this.Hora = Hora;
-    }
-
     public String getHora(){
         return Lugar;
     }   
