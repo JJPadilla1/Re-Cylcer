@@ -1,3 +1,11 @@
+
+/**
+ * @author  Grupo Re-Cycler
+ * @date 18-08-2019
+ * Universidad del Valle de Guatemala
+ * Modelar perfil de usuario
+ */
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -122,6 +130,8 @@ public class GUI {
 		Voluntariado voluntariado1 = new Voluntariado();
 		Usuario usuario1 = new Usuario();
 		Colecta colecta1 = new Colecta();
+		Aplicacion aplicacion1 = new Aplicacion();
+
 
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1042, 615);
@@ -184,16 +194,11 @@ public class GUI {
 		btnNewButton = new JButton("Ingresar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				usuario1.setUserName(String.valueOf(textField.getText()));
-				usuario1.setContrasena(String.valueOf(textField_1.getText()));
-				usuario1.setCorreo(String.valueOf(textField_2.getText()));
-				usuario1.setDireccion(String.valueOf(textField_3.getText()));
-				usuario1.setNombre(String.valueOf(textField_4.getText()));
-				usuario1.setTelefono(String.valueOf(textField_5.getText()));
-				
+				aplicacion1.setUsuario(String.valueOf(textField.getText()), String.valueOf(textField_1.getText()), String.valueOf(textField_2.getText()), String.valueOf(textField_5.getText()), String.valueOf(textField_3.getText()), String.valueOf(textField_4.getText()));
+
 			}
 		});
-		btnNewButton.setBounds(6, 272, 89, 23);
+		btnNewButton.setBounds(10, 272, 89, 23);
 		panel.add(btnNewButton);
 		
 		lblColecta = new JLabel("Colecta");
@@ -257,9 +262,7 @@ public class GUI {
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				voluntariado1.setHora(String.valueOf(comboBox_2.getSelectedItem()));
-				voluntariado1.setFecha(String.valueOf(dateChooser_1.getDate()));
-				voluntariado1.setLugar(String.valueOf(comboBox_3.getSelectedItem()));
+				aplicacion1.setNewVoluntariado(String.valueOf(comboBox_3.getSelectedItem()), String.valueOf(dateChooser_1.getDate()), String.valueOf(comboBox_2.getSelectedItem()));
 
 				
 			}
@@ -279,7 +282,7 @@ public class GUI {
 		btnSubir = new JButton("Solicitar");
 		btnSubir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.setText(String.valueOf(usuario1));
+				textArea.setText(String.valueOf(aplicacion1.getUsuario()));
 				
 			}
 		});
@@ -313,7 +316,7 @@ public class GUI {
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				textArea_2.setText(String.valueOf(voluntariado1));
+				textArea_2.setText(String.valueOf(aplicacion1.getVoluntariado()));
 				
 			}
 		});
@@ -396,7 +399,7 @@ public class GUI {
 		panel.add(textField_5);
 		
 		lblTelefono = new JLabel("Telefono");
-		lblTelefono.setBounds(10, 234, 46, 14);
+		lblTelefono.setBounds(10, 234, 85, 14);
 		panel.add(lblTelefono);
 	}
 	private static class __Tmp {
