@@ -26,15 +26,6 @@ import java.awt.Font;
 import javax.swing.border.LineBorder;
 import java.awt.ScrollPane;
 import java.awt.TextArea;
-/**
-* Create the TXT archive
-*/
-import java.io.FileInputStream;
-//import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-//import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 
 
 public class GUI {
@@ -219,30 +210,7 @@ public class GUI {
 		btnNewButton = new JButton("Ingresar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				aplicacion1.setUsuario(String.valueOf(textField.getText()), String.valueOf(textField_1.getText()), String.valueOf(textField_2.getText()), String.valueOf(textField_5.getText()), String.valueOf(textField_3.getText()), String.valueOf(textField_4.getText()));
-				
-				/**
-         			* Se crea un file Txt con los datos ingresados del usuario
-        			*/
-				
-				usuario1.setUserName(String.valueOf(textField.getText()));
-				usuario1.setContrasena(String.valueOf(textField_1.getText()));
-				usuario1.setCorreo(String.valueOf(textField_2.getText()));
-				usuario1.setTelefono((String.valueOf(textField_4.getText()));
-				usuario1.setDireccion(String.valueOf(textField_3.getText()));
-				usuario1.setNombre(String.valueOf(textField_5.getText()));
-			
-						   
-				//ObjectOutputStream
-				ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("Usuario.txt"));
-				out.writeObject(usuario1);
-						   
-				ObjectInputStream in = new ObjectInputStream(new FileInputStream("Usuario.txt"));
-				Usuario usuario2 = (Usuario) in.readObject();
-				
-				//System.out.println(u2.getUsuario());
-				//System.out.println(u2.getContrasena());
-				
+				aplicacion1.setUsuario(String.valueOf(textField.getText()), String.valueOf(textField_1.getText()), String.valueOf(textField_2.getText()), String.valueOf(textField_5.getText()), String.valueOf(textField_3.getText()), String.valueOf(textField_4.getText()));		
 			}
 		});
 		btnNewButton.setBounds(10, 272, 89, 23);
