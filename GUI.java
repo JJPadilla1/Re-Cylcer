@@ -35,7 +35,6 @@ public class GUI {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
-	private JLabel label_4;
 	private JButton button_3;
 	private JButton button_2;
 	private JButton button_1;
@@ -55,8 +54,6 @@ public class GUI {
 	private JLabel lblFecha;
 	private JComboBox comboBox_2;
 	private JComboBox comboBox;
-	private JLabel label_3;
-	private JLabel label_2;
 	private JLabel label_1;
 	private JLabel label;
 	private JButton btnSubir;
@@ -80,6 +77,19 @@ public class GUI {
 	private TextArea textArea_2;
 	private JTextField textField_5;
 	private JLabel lblTelefono;
+	private TextArea textArea_3;
+	private JLabel label_5;
+	private JLabel label_6;
+	private JLabel label_7;
+	private JLabel label_8;
+	private JTextField textField_6;
+	private JTextField textField_7;
+	private JTextField textField_8;
+	private JTextField textField_9;
+	private JLabel lblIngreseInformacionDe;
+	private TextArea textArea_4;
+	private JButton btnIngresar;
+	private JButton button_4;
 
 
 
@@ -275,10 +285,6 @@ public class GUI {
 		lblVerInformacion.setBounds(10, 306, 170, 14);
 		panel.add(lblVerInformacion);
 		
-		label_2 = new JLabel("...");
-		label_2.setBounds(10, 366, 867, 20);
-		panel.add(label_2);
-		
 		btnSubir = new JButton("Solicitar");
 		btnSubir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -303,10 +309,6 @@ public class GUI {
 		button_2.setBounds(258, 331, 89, 23);
 		panel.add(button_2);
 		
-		label_3 = new JLabel("...");
-		label_3.setBounds(258, 369, 881, 14);
-		panel.add(label_3);
-		
 		lblVerInformacionDe_1 = new JLabel("Ver informacion de Voluntariado");
 		lblVerInformacionDe_1.setForeground(Color.RED);
 		lblVerInformacionDe_1.setBounds(526, 306, 219, 14);
@@ -322,10 +324,6 @@ public class GUI {
 		});
 		button_3.setBounds(526, 331, 89, 23);
 		panel.add(button_3);
-		
-		label_4 = new JLabel("...");
-		label_4.setBounds(526, 365, 846, 23);
-		panel.add(label_4);
 		
 		dateChooser = new JDateChooser();
 		dateChooser.setBounds(377, 107, 96, 19);
@@ -373,12 +371,28 @@ public class GUI {
 		panel.add(lblEmpresa);
 		
 		btnSolicitar = new JButton("Solicitar");
-		btnSolicitar.setBounds(817, 103, 89, 23);
+		btnSolicitar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea_3.setText("Somos alumnos de la Universidad del valle que trabajamos" + 
+						"en un proyecto para asi poder resolver alguna problematica del pais," + 
+						"al analizar que es lo que afectaba mas al país determinamos que" + 
+						"nadie reciclaba, por lo tanto decidimos realizar este programa" + 
+						"para incentivar a los demas a reciclar" + 
+						"Los responsables somos:" +  
+						"Gabriel Quiroz" + 
+						"Jose Pablo Ponce" + 
+						"Joshua Padilla" + 
+						"Yoo Ji Kim" + 
+						"Mario De Leon");
+				
+			}
+		});
+		btnSolicitar.setBounds(818, 444, 89, 23);
 		panel.add(btnSolicitar);
 		
-		lblVerInformacionDe_2 = new JLabel("Ver informacion de Empresa");
+		lblVerInformacionDe_2 = new JLabel("Ver informacion de Creadores");
 		lblVerInformacionDe_2.setForeground(Color.RED);
-		lblVerInformacionDe_2.setBounds(817, 76, 219, 14);
+		lblVerInformacionDe_2.setBounds(818, 419, 219, 14);
 		panel.add(lblVerInformacionDe_2);
 		
 		textArea = new TextArea();
@@ -401,6 +415,74 @@ public class GUI {
 		lblTelefono = new JLabel("Telefono");
 		lblTelefono.setBounds(10, 234, 85, 14);
 		panel.add(lblTelefono);
+		
+		textArea_3 = new TextArea();
+		textArea_3.setBounds(816, 473, 200, 94);
+		panel.add(textArea_3);
+		
+		label_5 = new JLabel("Nombre");
+		label_5.setBounds(803, 76, 46, 14);
+		panel.add(label_5);
+		
+		label_6 = new JLabel("Correo");
+		label_6.setBounds(803, 107, 46, 14);
+		panel.add(label_6);
+		
+		label_7 = new JLabel("Telefono");
+		label_7.setBounds(803, 138, 85, 14);
+		panel.add(label_7);
+		
+		label_8 = new JLabel("Direccion");
+		label_8.setBounds(803, 169, 65, 14);
+		panel.add(label_8);
+		
+		textField_6 = new JTextField();
+		textField_6.setColumns(10);
+		textField_6.setBounds(861, 73, 86, 20);
+		panel.add(textField_6);
+		
+		textField_7 = new JTextField();
+		textField_7.setColumns(10);
+		textField_7.setBounds(861, 107, 86, 20);
+		panel.add(textField_7);
+		
+		textField_8 = new JTextField();
+		textField_8.setColumns(10);
+		textField_8.setBounds(861, 138, 86, 20);
+		panel.add(textField_8);
+		
+		textField_9 = new JTextField();
+		textField_9.setColumns(10);
+		textField_9.setBounds(861, 169, 86, 20);
+		panel.add(textField_9);
+		
+		lblIngreseInformacionDe = new JLabel("Ingrese informacion de la empresa ");
+		lblIngreseInformacionDe.setForeground(Color.RED);
+		lblIngreseInformacionDe.setBounds(797, 53, 219, 14);
+		panel.add(lblIngreseInformacionDe);
+		
+		textArea_4 = new TextArea();
+		textArea_4.setBounds(816, 235, 200, 175);
+		panel.add(textArea_4);
+		
+		btnIngresar = new JButton("Ingresar");
+		btnIngresar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				aplicacion1.setNewEmpresa(String.valueOf(textField_6.getText()), String.valueOf(textField_7.getText()), String.valueOf(textField_8.getText()), String.valueOf(textField_9.getText()));
+				
+			}
+		});
+		btnIngresar.setBounds(818, 206, 89, 23);
+		panel.add(btnIngresar);
+		
+		button_4 = new JButton("Solicitar");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea_4.setText(String.valueOf(aplicacion1.getEmpresa()));
+			}
+		});
+		button_4.setBounds(927, 206, 89, 23);
+		panel.add(button_4);
 	}
 	private static class __Tmp {
 		private static void __tmp() {
