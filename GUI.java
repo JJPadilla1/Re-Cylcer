@@ -201,11 +201,38 @@ public class GUI {
 		lblNombre.setBounds(10, 200, 46, 14);
 		panel.add(lblNombre);
 		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(105, 228, 86, 20);
+		panel.add(textField_5);
+		
 		btnNewButton = new JButton("Ingresar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				aplicacion1.setUsuario(String.valueOf(textField.getText()), String.valueOf(textField_1.getText()), String.valueOf(textField_2.getText()), String.valueOf(textField_5.getText()), String.valueOf(textField_3.getText()), String.valueOf(textField_4.getText()));
-
+				
+				/**
+         			* Se crea un file Txt con los datos ingresados del usuario
+        			*/
+				
+				usuario1.setUserName(String.valueOf(textField.getText());
+				usuario1.setContrasena(String.valueOf(textField_1.getText());
+				usuario1.setCorreo(String.valueOf(textField_2.getText());
+				usuario1.setTelefono("0");
+				usuario1.setDireccion(String.valueOf(textField_3.getText());
+				usuario1.setNombre(String.valueOf(textField_5.getText());
+			
+						   
+				//ObjectOutputStream
+				ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("Usuario.txt"));
+				out.writeObject(usuario1);
+						   
+				ObjectInputStream in = new ObjectInputStream(new FileInputStream("Usuario.txt"));
+				Usuario usuario2 = (Usuario) in.readObject();
+				
+				//System.out.println(u2.getUsuario());
+				//System.out.println(u2.getContrasena());
+				
 			}
 		});
 		btnNewButton.setBounds(10, 272, 89, 23);
@@ -407,10 +434,6 @@ public class GUI {
 		textArea_2.setBounds(548, 391, 200, 175);
 		panel.add(textArea_2);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(105, 228, 86, 20);
-		panel.add(textField_5);
 		
 		lblTelefono = new JLabel("Telefono");
 		lblTelefono.setBounds(10, 234, 85, 14);
