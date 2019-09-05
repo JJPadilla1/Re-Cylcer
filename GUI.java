@@ -27,7 +27,6 @@ import javax.swing.border.LineBorder;
 import java.awt.ScrollPane;
 import java.awt.TextArea;
 
-
 public class GUI {
 
 	private JFrame frame;
@@ -202,15 +201,11 @@ public class GUI {
 		lblNombre.setBounds(10, 200, 46, 14);
 		panel.add(lblNombre);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(105, 228, 86, 20);
-		panel.add(textField_5);
-		
 		btnNewButton = new JButton("Ingresar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				aplicacion1.setUsuario(String.valueOf(textField.getText()), String.valueOf(textField_1.getText()), String.valueOf(textField_2.getText()), String.valueOf(textField_5.getText()), String.valueOf(textField_3.getText()), String.valueOf(textField_4.getText()));		
+				aplicacion1.setUsuario(String.valueOf(textField.getText()), String.valueOf(textField_1.getText()), String.valueOf(textField_2.getText()), String.valueOf(textField_5.getText()), String.valueOf(textField_3.getText()), String.valueOf(textField_4.getText()));
+
 			}
 		});
 		btnNewButton.setBounds(10, 272, 89, 23);
@@ -241,9 +236,7 @@ public class GUI {
 		button = new JButton("Ingresar");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				colecta1.setMaterial(String.valueOf(comboBox.getSelectedItem()));
-				colecta1.setFecha(String.valueOf(dateChooser.getDate()));
-				colecta1.setLugar(String.valueOf(comboBox_1.getSelectedItem()));
+				aplicacion1.setNewColecta(String.valueOf(comboBox.getSelectedItem()), String.valueOf(dateChooser.getDate()), String.valueOf(comboBox_1.getSelectedItem()));;
 				
 				
 			}
@@ -308,7 +301,7 @@ public class GUI {
 		button_2 = new JButton("Solicitar");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea_1.setText(String.valueOf(colecta1));
+				textArea_1.setText(String.valueOf(aplicacion1.getColecta()));
 			}
 		});
 		button_2.setBounds(258, 331, 89, 23);
@@ -378,17 +371,17 @@ public class GUI {
 		btnSolicitar = new JButton("Solicitar");
 		btnSolicitar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea_3.setText("Somos alumnos de la Universidad del valle que trabajamos" + 
-						"en un proyecto para asi poder resolver alguna problematica del pais," + 
-						"al analizar que es lo que afectaba mas al país determinamos que" + 
-						"nadie reciclaba, por lo tanto decidimos realizar este programa" + 
-						"para incentivar a los demas a reciclar" + 
-						"Los responsables somos:" +  
-						"Gabriel Quiroz" + 
-						"Jose Pablo Ponce" + 
-						"Joshua Padilla" + 
-						"Yoo Ji Kim" + 
-						"Mario De Leon");
+				textArea_3.setText("Somos alumnos de la Universidad del valle que trabajamos\n" + 
+						"en un proyecto para asi poder resolver alguna problematica del pais,\n" + 
+						"al analizar que es lo que afectaba mas al país determinamos que\n" + 
+						"nadie reciclaba, por lo tanto decidimos realizar este programa\n" + 
+						"para incentivar a los demas a reciclar\n" + 
+						"Los responsables somos:\n" +  
+						"Gabriel Quiroz\n" + 
+						"Jose Pablo Ponce\n" + 
+						"Joshua Padilla\n" + 
+						"Yoo Ji Kim\n" + 
+						"Mario De Leon\n");
 				
 			}
 		});
@@ -412,6 +405,10 @@ public class GUI {
 		textArea_2.setBounds(548, 391, 200, 175);
 		panel.add(textArea_2);
 		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(105, 228, 86, 20);
+		panel.add(textField_5);
 		
 		lblTelefono = new JLabel("Telefono");
 		lblTelefono.setBounds(10, 234, 85, 14);
