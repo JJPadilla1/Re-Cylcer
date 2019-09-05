@@ -1,4 +1,4 @@
-
+import java.io.Serializable;
 /**
  * @author  Grupo Re-Cycler
  * @date 18-08-2019
@@ -6,7 +6,7 @@
  * Modelar perfil de usuario
  */
 
-public class Usuario{
+public class Usuario implements Serializable{ //Se implementa serializable
     private String UserName;
     private String Contrasena;
     private String Correo;
@@ -17,13 +17,13 @@ public class Usuario{
     /**
      *constructor
     */
-    public Usuario(){
-        UserName = "";
-        Contrasena = "";
-        Correo = "";
-        Telefono = "";
-        Direccion = "";
-        Nombre = "";
+    public Usuario(String usuario1, String contrasena1, String correo1, String telefono1, String direccion1, String nombre1){
+        UserName = usuario1;
+        Contrasena = contrasena1;
+        Correo = correo1;
+        Telefono = telefono1;
+        Direccion = direccion1;
+        Nombre = nombre1;
     }
 
     /**
