@@ -225,12 +225,12 @@ public class GUI {
          			* Se crea un file Txt con los datos ingresados del usuario
         			*/
 				
-				usuario1.setUserName(String.valueOf(textField.getText());
-				usuario1.setContrasena(String.valueOf(textField_1.getText());
-				usuario1.setCorreo(String.valueOf(textField_2.getText());
-				usuario1.setTelefono(textField_4.getText());
-				usuario1.setDireccion(String.valueOf(textField_3.getText());
-				usuario1.setNombre(String.valueOf(textField_5.getText());
+				usuario1.setUserName(String.valueOf(textField.getText()));
+				usuario1.setContrasena(String.valueOf(textField_1.getText()));
+				usuario1.setCorreo(String.valueOf(textField_2.getText()));
+				usuario1.setTelefono((String.valueOf(textField_4.getText()));
+				usuario1.setDireccion(String.valueOf(textField_3.getText()));
+				usuario1.setNombre(String.valueOf(textField_5.getText()));
 			
 						   
 				//ObjectOutputStream
