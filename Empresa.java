@@ -127,6 +127,7 @@ public class Empresa{
                 + "\nCorreo electronico: " + Correo
                 + "\nNumero telefonico: " + Telefono
                 + "\nDireccion del domicilio: " + Direccion
+                + "\nMaterial: " + Material.get(0)
                 ;
 
     }
