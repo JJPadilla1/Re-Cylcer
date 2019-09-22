@@ -187,7 +187,7 @@ public class Aplicacion{
         /**
          * Todos los sets de Colecta para el objeto Business
          */
-        Business.setMaterial(Material);
+        Business.setMaterial(0, Material);
         Business.setFecha(Fecha);
         Business.setLugar(Lugar);
         /**
@@ -211,7 +211,7 @@ public class Aplicacion{
         /**
          * Todos los sets de Empresa para el objeto Business
          */
-        Business.setMaterial(Material);
+        Business.setMaterial(0, Material);
         Business.setFecha(Fecha);
         Business.setLugar(Lugar);
         /**
