@@ -89,12 +89,9 @@ public class Colecta{
      */
 
     public String toString(){
-            String x = "";
-        for ( String i : Material){
-            x += i + ", ";
-        }
+
         return "\nLugar: " + Lugar
                 + "\nFecha: " + Fecha
-                + "\nMateriales: " + x;
+                + "\nMateriales: " + Material.get(0);
     }
 }
