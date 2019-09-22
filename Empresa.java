@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.ArrayList;
+
 /**
  * @author  Grupo Re-Cycler
  * @date 18-08-2019
@@ -11,7 +12,7 @@ public class Empresa{
     private String Correo;
     private String Telefono;
     private String Direccion;
-    private String[] Material;
+    private ArrayList<String> Material;
 
     /**
      *constructor
@@ -21,7 +22,7 @@ public class Empresa{
         Correo = "";
         Telefono = "";
         Direccion = "";
-        String[] Material = {"", "", "", ""};
+        Material = new ArrayList<String>();
     }
 
     /**
@@ -91,60 +92,30 @@ public class Empresa{
     }   
 
 
-        /**
-     * Función para cambiar Material de la Empresa cuando se tiene 1 material
+    /**
+     * Función para cambiar Material de la Empresa material
+     * @param index Indice de material a cambiar
      * @param Material Cadena con Material de la Empresa
+     * NO USAR CUANDO ARRAYLIST ESTE VACIO
      */
-    public void setMaterial(String Material){
-        this.Material[0] = Material;
+    public void setMaterial(int index, String Material){
+        this.Material.set(index, Material);
     }
 
     /**
-     * Función para cambiar Material de la Empresa cuando se tienen 2 materiales
-     * @param Material1 Cadena con Material1 de la Empresa
-     * @param Material2 Cadena con Material2 de la Empresa
+     * Funcion para anadir material al arraylist
+     * @param Material Material a agregar
      */
-    public void setMaterial(String Material1, String Material2){
-        this.Material[0] = Material1;
-        this.Material[1] = Material2;
+    public void newMaterial(String Material){
+        this.Material.add(Material);
     }
-
-    /**
-     * Función para cambiar Material de la Empresa cuando se tienen 3 materiales
-     * @param Material1 Cadena con Material1 de la Empresa
-     * @param Material2 Cadena con Material2 de la Empresa
-     * @param Material3 Cadena con Material3 de la Empresa
-     */
-    public void setMaterial(String Material1, String Material2, String Material3){
-        this.Material[0] = Material1;
-        this.Material[1] = Material2;
-        this.Material[2] = Material3;
-    } 
-
-    /**
-     * Función para cambiar Material de la Empresa cuando se tienen 4 materiales
-     * @param Material1 Cadena con Material1 de la Empresa
-     * @param Material2 Cadena con Material2 de la Empresa
-     * @param Material3 Cadena con Material3 de la Empresa
-     * @param Material4 Cadena con Material4 de la Empresa
-     */
-    public void setMaterial(String Material1, String Material2, String Material3, String Material4){
-        this.Material[0] = Material1;
-        this.Material[1] = Material2;
-        this.Material[2] = Material3;
-        this.Material[3] = Material4;
-    }       
 
     /**
      * Funcion para obtener Material de la Empresa
      * @return Devuelve Materiales de la Empresa
      */
-    public String getMaterial(){
-        String x = "";
-        for ( String i : Material){
-            x += i + ", ";
-        }
-        return x;
+    public ArrayList<String> getMaterial(){
+        return Material;
     }   
 
     /**
@@ -155,7 +126,8 @@ public class Empresa{
         return "\nEmpresa: " + NombreEmpresa
                 + "\nCorreo electronico: " + Correo
                 + "\nNumero telefonico: " + Telefono
-                + "\nDireccion del domicilio: " + Direccion;
+                + "\nDireccion del domicilio: " + Direccion
+                ;
 
     }
 }
