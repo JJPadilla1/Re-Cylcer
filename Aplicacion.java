@@ -227,22 +227,10 @@ public class Aplicacion{
      * @return String con datos de empresas
      */
     public String toString(){
-        String PrintEmpresa = "\nEmpresas: ";
+        String PrintEmpresa = "\nEmpresas: " + empresas.toString();
         String PrintUsuario = "\nUsuario: " + usuario.toString();
-        String PrintVoluntariados = "\nVoluntariados: ";
-        String PrintColectas = "\nColectas: ";
-
-        for (int i = 0; i < empresas.size(); i = i + 1){
-            PrintEmpresa = PrintEmpresa + empresas.get(i).toString();
-        }
-
-        for (int i = 0; i < voluntariados.size(); i = i + 1){
-            PrintVoluntariados = PrintVoluntariados + voluntariados.get(i).toString();
-        }  
-        
-        for (int i = 0; i < colectas.size(); i = i + 1){
-            PrintColectas = PrintColectas + colectas.get(i).toString();
-        }   
+        String PrintVoluntariados = "\nVoluntariados: " + voluntariados.toString();
+        String PrintColectas = "\nColectas: " + colectas.toString();
 
         return PrintEmpresa + PrintUsuario + PrintVoluntariados + PrintColectas;
 
