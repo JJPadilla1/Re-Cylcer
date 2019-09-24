@@ -3,7 +3,7 @@ import java.util.ArrayList;
  * @author  Grupo Re-Cycler
  * @date 23-08-2019
  * Universidad del Valle de Guatemala
- * Modelador de aplicación Re-cycler
+ * Modelador de aplicaciÃ³n Re-cycler
  */
 
 
@@ -25,7 +25,7 @@ public class Aplicacion{
     }
 
     /**
-     * Método para obtener la lista de empresas
+     * MÃ©todo para obtener la lista de empresas
      * @return ArrayList con las empresas
      */
     public ArrayList<Empresa> getEmpresa(){
@@ -33,7 +33,7 @@ public class Aplicacion{
         }
     
     /**
-     * Método para obtener objeto de usuario
+     * MÃ©todo para obtener objeto de usuario
      * @return Objeto de tipo usuario
      */  
     public Usuario getUsuario(){
@@ -41,7 +41,7 @@ public class Aplicacion{
         }
 
     /**
-     * Método para obtener la lista de voluntariados
+     * MÃ©todo para obtener la lista de voluntariados
      * @return ArrayList con los voluntariados
      */
     public ArrayList<Voluntariado> getVoluntariado(){
@@ -49,7 +49,7 @@ public class Aplicacion{
         }
 
     /**
-     * Método para obtener la lista de colectas
+     * MÃ©todo para obtener la lista de colectas
      * @return ArrayList con las colectas
      */
     public ArrayList<Colecta> getColecta(){
@@ -57,7 +57,7 @@ public class Aplicacion{
         }
 
     /**
-     * Método para agregar nueva empresa al ArrayList de empress.
+     * MÃ©todo para agregar nueva empresa al ArrayList de empress.
      * @param NombreEmpresa Nombre de la empresa de reciclaje que el usuario desea agregar
      * @param Correo Corereo de la empresa de reciclaje que el usuario desea agregar
      * @param Telefono Telefono de la empresa de reciclaje que el usuario desea agregar
@@ -83,8 +83,8 @@ public class Aplicacion{
     }
 
     /** 
-     * Método para cambiar los datos de una empresa existente
-     * @param x Indice de la empresa de la cual se quiere cambiar la información
+     * MÃ©todo para cambiar los datos de una empresa existente
+     * @param x Indice de la empresa de la cual se quiere cambiar la informaciÃ³n
      * @param NombreEmpresa Nombre de la empresa de reciclaje que el usuario desea modificar
      * @param Correo Corereo de la empresa de reciclaje que el usuario desea modificar
      * @param Telefono Telefono de la empresa de reciclaje que el usuario desea modificar
@@ -103,16 +103,16 @@ public class Aplicacion{
         Business.setTelefono(Telefono);
         Business.setDireccion(Direccion);
         /**
-         * Se sustituye los nuevos datos "Business" en la posición elegida del arraylist empresas
+         * Se sustituye los nuevos datos "Business" en la posiciÃ³n elegida del arraylist empresas
          */
         empresas.set(x,Business);
         
     }
 
 
-    /**Método para setear los datos del usuario
+    /**MÃ©todo para setear los datos del usuario
      * @param Username Username del usuario 
-     * @param Contraseña Contraseña que el usuario desee
+     * @param ContraseÃ±a ContraseÃ±a que el usuario desee
      * @param Correo Correo que el usuario desea agregar
      * @param Telefono Telefono que el usuario desea agregar
      * @param Direccion Direccion que el usuario desea agregar
@@ -129,7 +129,7 @@ public class Aplicacion{
 
 
 
-    /** Método para agregar nuevo voluntariado
+    /** MÃ©todo para agregar nuevo voluntariado
      * @param Lugar = Lugar del voluntaridao que el usuario desea agregar
      * @param Fecha = Fecha del voluntariado que el usuario desea agregar
      */
@@ -150,8 +150,8 @@ public class Aplicacion{
         voluntariados.add(Voluntariado);
     }
 
-    /** Método para cambiar los datos de un voluntariado existente
-     * @param x número de la posición del voluntariado que se desea cambiar la información
+    /** MÃ©todo para cambiar los datos de un voluntariado existente
+     * @param x nÃºmero de la posiciÃ³n del voluntariado que se desea cambiar la informaciÃ³n
      * @param Lugar Lugar del voluntariado que el usuario desea modificar
      * @param Fecha Fecha del voluntariado que el usuario desea modificar
      */
@@ -166,7 +166,7 @@ public class Aplicacion{
         Business.setLugar(Lugar);
         Business.setFecha(Fecha);
         /**
-         * Se sustituye los nuevos datos "Business" en la posición x del arraylist voluntariados
+         * Se sustituye los nuevos datos "Business" en la posiciÃ³n x del arraylist voluntariados
          */
         voluntariados.set(x,Business);
     }
@@ -174,7 +174,7 @@ public class Aplicacion{
 
 
 
-    /** Método para agregar nueva colecta
+    /** MÃ©todo para agregar nueva colecta
      * @param Material de reciclaje que el usuario desea agregar a la Colecta
      * @param Fecha Fecha de la colectan de reciclaje que el usuario desea agregar
      * @param Lugar Lugar de la colecta de reciclaje que el usuario desea agregar
@@ -197,11 +197,11 @@ public class Aplicacion{
     }
 
     /**
-     * Setter para colecta específica
-     * @param x Posición (indice) de colecta a modificar
+     * Setter para colecta especÃ­fica
+     * @param x PosiciÃ³n (indice) de colecta a modificar
      * @param Material Material a recolectar en colecta
-     * @param Fecha Fecha en la que se dará la colecta
-     * @param Lugar Lugar en el que se realizará la colecta
+     * @param Fecha Fecha en la que se darÃ¡ la colecta
+     * @param Lugar Lugar en el que se realizarÃ¡ la colecta
      */
     public void modificarColecta(int x, String Material, String Fecha, String Lugar){
         /**
@@ -215,7 +215,7 @@ public class Aplicacion{
         Business.setFecha(Fecha);
         Business.setLugar(Lugar);
         /**
-         * Se sustituye los nuevos datos "Business" en la posición x del arraylist colectas
+         * Se sustituye los nuevos datos "Business" en la posiciÃ³n x del arraylist colectas
          */
         colectas.set(x,Business);
     }
@@ -223,7 +223,7 @@ public class Aplicacion{
 
 
     /**
-     * Método toString (concatena los atributos del objeto en un string)
+     * MÃ©todo toString (concatena los atributos del objeto en un string)
      * @return String con datos de empresas
      */
     public String toString(){
@@ -235,4 +235,50 @@ public class Aplicacion{
         return PrintEmpresa + PrintUsuario + PrintVoluntariados + PrintColectas;
 
     }
+    
+    /**
+     * MÃ©todo para calcular ganancia  del material a reciclar
+     * @return ganancia
+     */
+    public static String getcalculadora (String material, float cantidad) {
+    	double ganancia=0;
+    	
+    	if (material == "Metal") {
+    		ganancia = cantidad *0.79;
+    	}
+    		
+    	else if (material == "Plastico") {
+    		ganancia = cantidad*0.50;
+    	}
+    	
+    	else if (material =="Vidrio") {
+    		ganancia = cantidad*0.24;
+    	}
+    	else if  (material =="Papel") {
+    		ganancia = cantidad * 1.19;
+    	}
+    	return String.valueOf(ganancia);
+    		
+    		
+    	}
+    /**
+     * MÃ©todo para validar numeros
+     * @return boolean
+     */
+    public boolean getvalidacion (String valor) {
+    	float numero;
+    	try
+    	{
+    		numero = Float.parseFloat(valor);
+    		return true;
+    	}
+    	catch (Exception e) {
+    		return false;
+    	}
+    }
 }
+
+
+
+    	
+    	
