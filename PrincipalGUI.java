@@ -16,11 +16,13 @@ import javax.swing.JTextField;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.TextArea;
 
 public class PrincipalGUI {
 
 	private JFrame frame;
 	private JTextField txtGananciasCalculadora;
+	private TextArea textArea;
 
 	/**
 	 * Launch the application.
@@ -124,10 +126,12 @@ public class PrincipalGUI {
 		panel_1.add(txtGananciasCalculadora);
 		txtGananciasCalculadora.setColumns(10);
 		
+		Aplicacion obtener = new Aplicacion();
+
+		
 		JButton btnCalculadora = new JButton("Calcular");
 		btnCalculadora.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Aplicacion obtener = new Aplicacion();
 				
 				boolean v;
 				v = (obtener.getvalidacion(txtPesoCalculadora.getText()));
@@ -138,7 +142,7 @@ public class PrincipalGUI {
 				txtGananciasCalculadora.setText(obtener.getcalculadora(String.valueOf(cbMaterialCalculadora.getSelectedItem()), Float.parseFloat((txtPesoCalculadora.getText()))));
 			}
 				else {
-					txtPesoCalculadora.setText("Caracteres Invalidoss");
+					txtPesoCalculadora.setText("Caracteres Invalidos");
 					
 				}
 			}
@@ -184,11 +188,6 @@ public class PrincipalGUI {
 		btnAnadirColecta.setBounds(10, 168, 80, 23);
 		panel_2.add(btnAnadirColecta);
 		
-		JTextArea txtAreaColectasInscritas = new JTextArea();
-		txtAreaColectasInscritas.setEditable(false);
-		txtAreaColectasInscritas.setBounds(10, 233, 171, 189);
-		panel_2.add(txtAreaColectasInscritas);
-		
 		JLabel lblNewLabel_5 = new JLabel("Colectas Inscritas:");
 		lblNewLabel_5.setBounds(10, 217, 171, 14);
 		panel_2.add(lblNewLabel_5);
@@ -200,6 +199,10 @@ public class PrincipalGUI {
 		});
 		btnQuitarColecta.setBounds(100, 168, 81, 23);
 		panel_2.add(btnQuitarColecta);
+		
+		TextArea textArea_2 = new TextArea();
+		textArea_2.setBounds(10, 236, 171, 187);
+		panel_2.add(textArea_2);
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Ofrecerse como voluntario", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
@@ -246,9 +249,9 @@ public class PrincipalGUI {
 		lblVoluntariadosInscritos.setBounds(10, 216, 151, 14);
 		panel_3.add(lblVoluntariadosInscritos);
 		
-		JTextArea txtAreaVoluntariadosInscritos = new JTextArea();
-		txtAreaVoluntariadosInscritos.setBounds(10, 233, 171, 189);
-		panel_3.add(txtAreaVoluntariadosInscritos);
+		TextArea textArea_1 = new TextArea();
+		textArea_1.setBounds(10, 236, 171, 187);
+		panel_3.add(textArea_1);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBorder(new TitledBorder(null, "Informaci\u00F3n:", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -257,19 +260,35 @@ public class PrincipalGUI {
 		panel_4.setLayout(null);
 		
 		JButton btnDatosEmpresas = new JButton("Datos de Empresas");
+		btnDatosEmpresas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.setText(obtener.getinformacionempresas());
+				
+			}
+		});
 		btnDatosEmpresas.setBounds(10, 21, 165, 23);
 		panel_4.add(btnDatosEmpresas);
 		
 		JButton btnPreguntasFrecuentes = new JButton("Preguntas Frecuentes");
+		btnPreguntasFrecuentes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.setText(obtener.getpreguntasfrecuentes());
+			}
+		});
 		btnPreguntasFrecuentes.setBounds(10, 55, 165, 23);
 		panel_4.add(btnPreguntasFrecuentes);
 		
 		JButton btnAcercaDeNosotros = new JButton("Acerca de Nosotros");
+		btnAcercaDeNosotros.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.setText(obtener.getinformacionsobrenosotros());
+			}
+		});
 		btnAcercaDeNosotros.setBounds(10, 89, 165, 23);
 		panel_4.add(btnAcercaDeNosotros);
 		
-		JTextArea txtAreaInformacion = new JTextArea();
-		txtAreaInformacion.setBounds(10, 123, 165, 299);
-		panel_4.add(txtAreaInformacion);
+		textArea = new TextArea();
+		textArea.setBounds(10, 118, 165, 305);
+		panel_4.add(textArea);
 	}
 }
