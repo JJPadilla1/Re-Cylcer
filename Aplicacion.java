@@ -276,9 +276,90 @@ public class Aplicacion{
     		return false;
     	}
     }
+    
+    /**
+     * MÃ©todo para obtener informacion de empresas de reciclaje
+     * @return String
+     */
+    public String getinformacionempresas() {
+    	return ("**CODIGUA**\n" + 
+    			"\n" + 
+    			"Caracteristica principal:\n" + 
+    			"Servicio a domicilio\n" + 
+    			"\n" + 
+    			"Telefono:\n" + 
+    			"30452302|22789503\n" + 
+    			"\n" + 
+    			"Horario:\n" + 
+    			"7:00 a.m. a 5:00 p.m.\n" + 
+    			"\n" + 
+    			"Ubicación\n" + 
+    			"Avenida Petapa 42-21 zona 12 \n" + 
+    			"\n" + 
+    			"**Red Ecológica**\n" + 
+    			"\n" + 
+    			"Caracteristica principal:\n" + 
+    			"Recicla tus hojas usadas\n" + 
+    			"\n" + 
+    			"Teléfono\n" + 
+    			"24271360\n" + 
+    			"\n" + 
+    			"Ubicación\n" + 
+    			"Kilómetro 8 Carretera al Atllántico, Zona 18 \n" + 
+    			"\n" + 
+    			"**Recicladora La Joya**\n" + 
+    			"\n" + 
+    			"Caracteristica principal:\n" + 
+    			"Reciben papel, cartón, cartulina, latas, plástico\n" + 
+    			"\n" + 
+    			"Telefono:\n" + 
+    			"24481286|24482178\n" + 
+    			"\n" + 
+    			"Ubicacion:\n" + 
+    			"1era. Calle 1-85 Colonia Los Álamos zona 6 de San Miguel Petapa\n" + 
+    			"");
+    	
+    }
+    /**
+     * MÃ©todo para obtener informacion de los creadores
+     * @return String
+     */
+    public String getinformacionsobrenosotros() {
+    	return ("Somos alumnos de la\n" + 
+    			"Universidad del valle que \n" + 
+    			"trabajamos en un proyecto para \n" + 
+    			"asi poder resolver alguna problematica \n" + 
+    			"del pais, al analizar que es\n" + 
+    			"lo que afectaba mas al país \n" + 
+    			"determinamos que nadie \n" + 
+    			"reciclaba, por lo tanto\n" + 
+    			" decidimos realizar este programa\n" + 
+    			"para incentivar a los demas a \n" + 
+    			"reciclar.");
+}
+    /**
+     * MÃ©todo para obtener las preguntas mas frecuentes
+     * @return String
+     */
+    public String getpreguntasfrecuentes() {
+    	return("======PREGUNTAS FRECUENTES======\n" + 
+    			"\n" + 
+    			"Pregunta: ¿Hay otros idiomas disponibles?\n" + 
+    			"Respuesta: No por el momento, ya que \n" + 
+    			"en el país el idioma más popular es\n" + 
+    			"el español, no consideramos necesario\n" + 
+    			"agregar otro idioma mientras que no\n" + 
+    			"nos expandamos a otro país\n" + 
+    			"\n" + 
+    			"Pregunta: ¿Porqué debería reciclar?\n" + 
+    			"Respuesta: Porque el la contaminación\n" + 
+    			"mata al planeta y reciclando puedes \n" + 
+    			"reducirla.\n" + 
+    			"\n" + 
+    			"Pregunta: ¿Cómo puedo ayudar más?\n" + 
+    			"Respuesta: Trata de usar productos \n" + 
+    			"biodegradables.");
+    	
+    }
 }
 
-
-
-    	
-    	
