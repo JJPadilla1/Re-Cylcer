@@ -25,9 +25,21 @@ public class Usuario implements Serializable{ //Se implementa serializable
         Direccion = direccion1;
         Nombre = nombre1;
     }
+    /**
+     *constructor
+    */
+    public Usuario(){
+        UserName = "";
+        Contrasena = "";
+        Correo = "";
+        Telefono = "";
+        Direccion = "";
+        Nombre = "";
+    }
+    
 
     /**
-     * Función para cambiar UserName del usuario
+     * FunciÃ³n para cambiar UserName del usuario
      * @param UserName Cadena con UserName del usuario
      */
     public void setUserName(String UserName){
@@ -43,7 +55,7 @@ public class Usuario implements Serializable{ //Se implementa serializable
     }  
 
     /**
-     * Función para cambiar Contrasena del usuario
+     * FunciÃ³n para cambiar Contrasena del usuario
      * @param Contrasena Cadena con Contrasena del usuario
      */
     public void setContrasena(String Contrasena){
@@ -60,7 +72,7 @@ public class Usuario implements Serializable{ //Se implementa serializable
 
     
     /**
-     * Función para cambiar Correo del usuario
+     * FunciÃ³n para cambiar Correo del usuario
      * @param Correo Cadena con Correo del usuario
      */
     public void setCorreo(String Correo){
@@ -77,7 +89,7 @@ public class Usuario implements Serializable{ //Se implementa serializable
 
 
     /**
-     * Función para cambiar Telefono del usuario
+     * FunciÃ³n para cambiar Telefono del usuario
      * @param Telefono Cadena con Telefono del usuario
      */
     public void setTelefono(String Telefono){
@@ -94,7 +106,7 @@ public class Usuario implements Serializable{ //Se implementa serializable
 
 
     /**
-     * Función para cambiar Direccion del usuario
+     * FunciÃ³n para cambiar Direccion del usuario
      * @param Direccion Cadena con Direccion del usuario
      */
     public void setDireccion(String Direccion){
@@ -111,7 +123,7 @@ public class Usuario implements Serializable{ //Se implementa serializable
 
 
     /**
-     * Función para cambiar Nombre del usuario
+     * FunciÃ³n para cambiar Nombre del usuario
      * @param Nombre Cadena con Nombre del usuario
      */
     public void setNombre(String Nombre){
