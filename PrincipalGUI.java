@@ -75,7 +75,7 @@ public class PrincipalGUI {
 		panel.add(txtCorreo);
 		
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a:");
-		lblContrasea.setBounds(10, 71, 65, 14);
+		lblContrasea.setBounds(10, 71, 83, 14);
 		panel.add(lblContrasea);
 		
 		JTextPane txtContrasena = new JTextPane();
@@ -83,7 +83,7 @@ public class PrincipalGUI {
 		panel.add(txtContrasena);
 		
 		JButton btnIniciarSesin = new JButton("Iniciar sesi\u00F3n");
-		btnIniciarSesin.setBounds(41, 116, 101, 23);
+		btnIniciarSesin.setBounds(41, 116, 119, 23);
 		panel.add(btnIniciarSesin);
 		
 		JTextArea txtAreaInicioDeSesion = new JTextArea();
@@ -98,7 +98,7 @@ public class PrincipalGUI {
 		panel_1.setLayout(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("Material:");
-		lblNewLabel_1.setBounds(10, 25, 46, 14);
+		lblNewLabel_1.setBounds(10, 25, 67, 14);
 		panel_1.add(lblNewLabel_1);
 		
 		JComboBox cbMaterialCalculadora = new JComboBox();
@@ -106,16 +106,16 @@ public class PrincipalGUI {
 		cbMaterialCalculadora.setBounds(10, 41, 171, 20);
 		panel_1.add(cbMaterialCalculadora);
 		
-		JLabel lblNewLabel_2 = new JLabel("Peso en libras:");
-		lblNewLabel_2.setBounds(10, 72, 95, 14);
+		JLabel lblNewLabel_2 = new JLabel("Peso en Kilogramos:");
+		lblNewLabel_2.setBounds(10, 72, 149, 14);
 		panel_1.add(lblNewLabel_2);
 		
 		JTextPane txtPesoCalculadora = new JTextPane();
 		txtPesoCalculadora.setBounds(10, 88, 171, 20);
 		panel_1.add(txtPesoCalculadora);
 		
-		JLabel lblNewLabel_3 = new JLabel("Ganancias estimadas:");
-		lblNewLabel_3.setBounds(10, 163, 122, 14);
+		JLabel lblNewLabel_3 = new JLabel("Ganancias estimadas (Q):");
+		lblNewLabel_3.setBounds(10, 163, 149, 14);
 		panel_1.add(lblNewLabel_3);
 		
 		txtGananciasCalculadora = new JTextField();
@@ -125,6 +125,25 @@ public class PrincipalGUI {
 		txtGananciasCalculadora.setColumns(10);
 		
 		JButton btnCalculadora = new JButton("Calcular");
+		btnCalculadora.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Aplicacion obtener = new Aplicacion();
+				
+				boolean v;
+				v = (obtener.getvalidacion(txtPesoCalculadora.getText()));
+				
+				if (v ==true) {
+				
+				
+				txtGananciasCalculadora.setText(obtener.getcalculadora(String.valueOf(cbMaterialCalculadora.getSelectedItem()), Float.parseFloat((txtPesoCalculadora.getText()))));
+			}
+				else {
+					txtPesoCalculadora.setText("Caracteres Invalidoss");
+					
+				}
+			}
+		}
+		);
 		btnCalculadora.setBounds(43, 119, 89, 23);
 		panel_1.add(btnCalculadora);
 		
@@ -140,7 +159,7 @@ public class PrincipalGUI {
 		panel_2.add(cbMaterialColecta);
 		
 		JLabel label = new JLabel("Material:");
-		label.setBounds(10, 24, 46, 14);
+		label.setBounds(10, 24, 66, 14);
 		panel_2.add(label);
 		
 		JLabel lblNewLabel_4 = new JLabel("Fecha:");
@@ -224,7 +243,7 @@ public class PrincipalGUI {
 		panel_3.add(btnQuitarVoluntariado);
 		
 		JLabel lblVoluntariadosInscritos = new JLabel("Voluntariados inscritos:");
-		lblVoluntariadosInscritos.setBounds(10, 216, 121, 14);
+		lblVoluntariadosInscritos.setBounds(10, 216, 151, 14);
 		panel_3.add(lblVoluntariadosInscritos);
 		
 		JTextArea txtAreaVoluntariadosInscritos = new JTextArea();
