@@ -2,6 +2,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JPanel;
@@ -142,13 +144,13 @@ public class PrincipalGUI {
 				txtGananciasCalculadora.setText(obtener.getcalculadora(String.valueOf(cbMaterialCalculadora.getSelectedItem()), Float.parseFloat((txtPesoCalculadora.getText()))));
 			}
 				else {
-					txtPesoCalculadora.setText("Caracteres Invalidos");
+					JOptionPane.showMessageDialog(null, "Ingrese unos valores validos");
 					
 				}
 			}
 		}
 		);
-		btnCalculadora.setBounds(43, 119, 89, 23);
+		btnCalculadora.setBounds(45, 130, 89, 23);
 		panel_1.add(btnCalculadora);
 		
 		JPanel panel_2 = new JPanel();
