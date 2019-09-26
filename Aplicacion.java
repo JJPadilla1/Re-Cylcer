@@ -13,18 +13,53 @@ import java.util.ArrayList;
  */
 public class Aplicacion{
     private ArrayList<Empresa> empresas;
-    private Usuario usuario;
+    private ArrayList<Usuario> usuario;
     private ArrayList<Voluntariado> voluntariados;
     private ArrayList<Colecta> colectas;
+    private Usuario user;
 
     public Aplicacion (){
         empresas = new ArrayList<Empresa>();
-        usuario = new Usuario();
+        usuario = new ArrayList<Usuario>();
         voluntariados = new ArrayList<Voluntariado>();
         colectas = new ArrayList<Colecta>();
+        user = new Usuario();
     }
+    public String loginCorreeo(String correo) {
+    	for(int x=0;x<usuario.size();x++) {
+    		   correo = (usuario.get(x).getCorreo());
+    		   
+    			  
+    		}
+		return correo;
+		
+    	
+    
+    }
+    public String loginContra(String contra) {
+    	for(int x=0;x<usuario.size();x++) {
+    			contra = (usuario.get(x).getContrasena());
+    	}
+    	return contra;
+    }
+    
+    public void anadir(Usuario x){
+    	usuario.add(x);
+    	
+    }
+    
 
-    /**
+    public ArrayList<Usuario> getUsuario() {
+		return usuario;
+	}
+
+
+	public void setUsuario(ArrayList<Usuario> usuario) {
+		this.usuario = usuario;
+	}
+
+
+	/**
      * MÃ©todo para obtener la lista de empresas
      * @return ArrayList con las empresas
      */
@@ -32,14 +67,6 @@ public class Aplicacion{
         return empresas;
         }
     
-    /**
-     * MÃ©todo para obtener objeto de usuario
-     * @return Objeto de tipo usuario
-     */  
-    public Usuario getUsuario(){
-        return usuario;
-        }
-
     /**
      * MÃ©todo para obtener la lista de voluntariados
      * @return ArrayList con los voluntariados
@@ -110,22 +137,6 @@ public class Aplicacion{
     }
 
 
-    /**MÃ©todo para setear los datos del usuario
-     * @param Username Username del usuario 
-     * @param ContraseÃ±a ContraseÃ±a que el usuario desee
-     * @param Correo Correo que el usuario desea agregar
-     * @param Telefono Telefono que el usuario desea agregar
-     * @param Direccion Direccion que el usuario desea agregar
-     * @param Nombre Nombre del usuario que desee registrar
-     */
-    public void setUsuario(String UserName, String Contrasena, String Correo, String Telefono, String Direccion, String Nombre){
-        usuario.setUserName(UserName);
-        usuario.setContrasena(Contrasena);
-        usuario.setCorreo(Correo);
-        usuario.setTelefono(Telefono);
-        usuario.setDireccion(Direccion);
-        usuario.setNombre(Nombre);
-    }
 
 
 
@@ -362,4 +373,3 @@ public class Aplicacion{
     	
     }
 }
-
